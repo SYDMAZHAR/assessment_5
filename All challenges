@@ -1,0 +1,124 @@
+#challenge 1
+
+
+class Point:
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def sqSum(self):
+        return self.x**2 + self.y**2 + self.z**2
+
+# Sample usage
+p = Point(1, 3, 5)
+result = p.sqSum()
+print(result)  
+
+#challenge 2
+
+class Calculator:
+    def __init__(self, num1, num2):
+        self.num1 = num1
+        self.num2 = num2
+
+    def add(self):
+        return self.num1 + self.num2
+
+    def subtract(self):
+        return self.num2 - self.num1
+
+    def multiply(self):
+        return self.num1 * self.num2
+
+    def divide(self):
+        return self.num2 / self.num1
+
+# Sample usage
+obj = Calculator(10, 94)
+print(obj.add())       
+print(obj.subtract())  
+print(obj.multiply())  
+print(obj.divide()) 
+
+
+#challenge 3
+
+class Student:
+    def setName(self, name):
+        self.__name = name
+    
+    def getName(self):
+        return self.__name
+    
+    def setRollNumber(self, rollNumber):
+        self.__rollNumber = rollNumber
+    
+    def getRollNumber(self):
+        return self.__rollNumber
+
+# Sample usage
+student = Student()
+student.setName("Alice")
+student.setRollNumber(12345)
+
+print(student.getName())     
+print(student.getRollNumber())  
+
+
+#challenge 4
+
+class Account:
+    def __init__(self, title, balance=0):
+        self.title = title
+        self.balance = balance
+
+class SavingsAccount(Account):
+    def __init__(self, title, balance=0, interestRate=0):
+        super().__init__(title, balance)
+        self.interestRate = interestRate
+
+# Sample usage
+
+account = Account("Ashish", 5000)
+savings_account = SavingsAccount("Ashish", 5000, 5)
+
+print(f"Account Title: {account.title}")
+print(f"Account Balance: {account.balance}")
+
+print(f"Savings Account Title: {savings_account.title}")
+print(f"Savings Account Balance: {savings_account.balance}")
+print(f"Savings Account Interest Rate: {savings_account.interestRate}%")
+
+#challenege 5
+
+class Account:
+    def __init__(self, title, balance=0):
+        self.title = title
+        self.balance = balance
+
+    def getBalance(self):
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdrawal(self, amount):
+        self.balance -= amount
+
+class SavingsAccount(Account):
+    def __init__(self, title, balance=0, interestRate=0):
+        super().__init__(title, balance)
+        self.interestRate = interestRate
+
+    def interestAmount(self):
+        return (self.balance * self.interestRate) / 100
+
+# Sample usage
+savings_account = SavingsAccount("Ashish", 2000, 5)
+print(savings_account.getBalance())      
+savings_account.deposit(500)
+print(savings_account.getBalance())        
+savings_account.withdrawal(500)
+print(savings_account.getBalance())         
+print(savings_account.interestAmount())     
